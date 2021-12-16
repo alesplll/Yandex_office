@@ -87,7 +87,7 @@ class MyWidget(QMainWindow):
             place = 11
         elif self.pushButton_12.isChecked() == True:
             place = 12
-        print(place)
+        #print(place)
         self.hire(place)
             #self.pushButton_confirm.clicked.connect(partial(self.hire, place))
         #не шарю че сделать, нужно условие чтобы по нажатию на конфирм срабатлывало hire()
@@ -98,7 +98,7 @@ class MyWidget(QMainWindow):
         cur = self.con.cursor()
         cur.execute(f"""SELECT freeornor{date} FROM tbl WHERE numberoftable = {place}""")
         temp = cur.fetchone()[0]
-        print(temp)
+        #print(temp)
         if temp == 1:
             temp = 0
         else:
@@ -108,7 +108,7 @@ class MyWidget(QMainWindow):
 
         cur = self.con.cursor()
         cur.execute(f"""SELECT freeornor{date} FROM tbl WHERE numberoftable = {place}""")
-        print(cur.fetchone()[0])
+        #print(cur.fetchone()[0])
         self.con.commit()
         self.upd()
 
